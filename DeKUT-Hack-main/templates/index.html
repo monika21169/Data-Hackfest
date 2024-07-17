@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Recommender</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <style>
+        body {
+            width: 80%;
+            margin: auto;
+            margin-top: 50px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to the Place Recommender</h1>
+        <p>Fill out the form below to get recommendations based on your preferences.</p>
+    </div>
+    <form action="/recommend" method="post">
+        <div>
+            <label for="type">Preferred Type of Place:</label>
+            <input type="text" id="type" name="type" placeholder="e.g., Park, Museum">
+        </div>
+        <div>
+            <label for="zone">Preferred Zone:</label>
+            <input type="text" id="zone" name="zone" placeholder="e.g., Northern, Southern">
+        </div>
+        <div>
+            <label for="budget">Maximum Budget (INR):</label>
+            <input type="number" id="budget" name="budget" placeholder="e.g., 500">
+        </div>
+        <div>
+            <label for="duration">Maximum Duration (hours):</label>
+            <input type="number" step="0.5" id="duration" name="duration" placeholder="e.g., 2">
+        </div>
+        <button type="submit">Get Recommendations</button>
+    </form>
+    
+    <!-- Button for Chatbot -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="/chatbot.html" class="button">Talk to Chatbot</a>
+        <a href="/hotel.html" class="button">Get Hotel and Insurance</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <style>
+        body {
+            width: 80%;
+            margin: auto;
+            margin-top: 50px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Recommended Places</h1>
+        <p>Based on your preferences, we recommend visiting the following places:</p>
+    </div>
+    {% if recommendations.empty %}
+    <p>No recommendations found based on your preferences. Please adjust your search criteria and try again.</p>
+{% else %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>City</th>
+            <th>Rating</th>
+            <th>Entrance Fee</th>
+        </tr>
+        {% for index, place in recommendations.iterrows() %}
+        <tr>
+            <td>{{ place['Name'] }}</td>
+            <td>{{ place['Type'] }}</td>
+            <td>{{ place['City'] }}</td>
+            <td>{{ place['Google review rating'] }}</td>
+            <td>{{ place['Entrance Fee in INR'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+</body>
+</html>

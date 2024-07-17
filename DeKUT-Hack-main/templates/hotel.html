@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel and Insurance Cards</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    header {
+        margin-top: 50px;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: 300px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 20px;
+        background-color: #fff;
+    }
+
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover; /* Ensures the image maintains aspect ratio */
+    }
+
+    .card .content {
+        padding: 20px;
+    }
+
+    .card .content h3 {
+        margin-top: 0;
+        font-size: 18px;
+    }
+
+    .card .content p {
+        margin-bottom: 0;
+        color: #666;
+    }
+
+    .section-title {
+        font-weight: bold;
+        font-size: 25px;
+        margin-top: 40px;
+    }
+</style>
+</head>
+<body>
+
+<header>Hotels</header>
+
+<div class="card-container">
+    <div class="card">
+        <img src="{{ url_for('static', filename='hotel1.jpg') }}" alt="Hotel Image">
+        <div class="content">
+            <h3>Hotel Name 1</h3>
+            <p>Address: 123 Hotel Street, City</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{{ url_for('static', filename='hotel2.jpg') }}" alt="Hotel Image">
+        <div class="content">
+            <h3>Hotel Name 2</h3>
+            <p>Address: 456 Resort Avenue, Town</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{{ url_for('static', filename='hotel3.jpg') }}" alt="Hotel Image">
+        <div class="content">
+            <h3>Hotel Name 3</h3>
+            <p>Address: 789 Beach Road, Seaside</p>
+        </div>
+    </div>
+</div>
+
+<div class="section-title">Insurance</div>
+
+<div class="card-container">
+    <div class="card">
+        <img src="{{ url_for('static', filename='insurance1.jpeg') }}" alt="Insurance Image">
+        <div class="content">
+            <h3>Insurance Plan 1</h3>
+            <p>Details: Plan details here</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{{ url_for('static', filename='insurance2.png') }}" alt="Insurance Image">
+        <div class="content">
+            <h3>Insurance Plan 2</h3>
+            <p>Details: Plan details here</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{{ url_for('static', filename='insurance3.jpeg') }}" alt="Insurance Image">
+        <div class="content">
+            <h3>Insurance Plan 3</h3>
+            <p>Details: Plan details here</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
